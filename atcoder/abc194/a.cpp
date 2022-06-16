@@ -13,6 +13,5 @@ int main() {
   else if (c >= 3) cout << 3 << endl;
   else cout << 4 << endl;
 
-
   return 0;
 }

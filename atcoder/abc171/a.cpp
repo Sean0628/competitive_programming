@@ -5,13 +5,9 @@ using ll = long long;
 using P = pair<int, int>;
 
 int main() {
-  int n, x; cin >> n >> x;
-  string o = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  string s;
+  char a; cin >> a;
 
-  rep(i, o.size()) rep(j, n) s += o[i];
-
-  cout << s[x-1] << endl;
-
+  if (isupper(a)) cout << "A" << endl;
+  else cout << "a" << endl;
   return 0;
 }

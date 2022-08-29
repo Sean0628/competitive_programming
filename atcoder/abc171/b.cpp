@@ -5,13 +5,17 @@ using ll = long long;
 using P = pair<int, int>;
 
 int main() {
-  int n, x; cin >> n >> x;
-  string o = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  string s;
+  int n, k; cin >> n >> k;
+  vector<int> p(n);
+  rep(i, n) cin >> p[i];
 
-  rep(i, o.size()) rep(j, n) s += o[i];
+  sort(p.begin(), p.end());
 
-  cout << s[x-1] << endl;
+  int ans = 0;
+  rep(i, k) {
+    ans += p[i];
+  }
 
+  cout << ans << endl;
   return 0;
 }

@@ -12,12 +12,16 @@ int main() {
   rep(i, n-1) cin >> a[i];
   rep(i, n-1) cin >> b[i];
 
-  vector<int> dp(n, 0);
+  vector<int> dp(n+1, INT_MIN);
 
-  for (int i = 1; i <= n; ++i) {
+  dp[1] = 0;
+  for (int i = 1; i < n; ++i) {
     dp[a[i-1]] = max(dp[a[i-1]], dp[i]+100);
     dp[b[i-1]] = max(dp[b[i-1]], dp[i]+150);
   }
+
+  rep(i, n+1) cout << dp[i] << " ";
+  cout << endl;
 
   cout << dp[n] << endl;
 

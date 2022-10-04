@@ -7,17 +7,21 @@ using ll = long long;
 using P = pair<int, int>;
 
 int main() {
-  int n; cin >> n;
-  vector<int> a(n+1);
-  rep(i, n) cin >> a[i];
+  int n, k; cin >> n >> k;
+  vector<int> a(k);
+  rep(i, k) cin >> a[i];
 
-  int sum = a[0];
+  vector<bool> dp(n+1, false);
 
-  for (int i = 1; i <= n; ++i) {
-    sum = (sum ^ a[i]);
+  rep(i, n+1) {
+    rep(j, k) {
+      if (i >= a[j] && !dp[i-a[j]]) dp[i] = true;
+    }
   }
 
-  if (sum) cout << "First" << endl;
-  else cout << "Second" << endl;
+  string ans = "First";
+  if (!dp[n]) ans = "Second";
+
+  cout << ans << endl;
   return 0;
 }

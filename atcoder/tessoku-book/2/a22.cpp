@@ -15,7 +15,7 @@ int main() {
   vector<int> dp(n+1, INT_MIN);
 
   dp[1] = 0;
-  for (int i = 1; i < n; ++i) {
+  for (int i = 1; i <= n; ++i) {
     dp[a[i-1]] = max(dp[a[i-1]], dp[i]+100);
     dp[b[i-1]] = max(dp[b[i-1]], dp[i]+150);
   }

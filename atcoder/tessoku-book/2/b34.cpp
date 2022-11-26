@@ -7,17 +7,20 @@ using ll = long long;
 using P = pair<int, int>;
 
 int main() {
-  int n, h, w; cin >> n >> h >> w;
-  vector<int> a(n), b(n);
-  rep(i, n) cin >> a[i] >> b[i];
+  int n, x, y; cin >> n >> x >> y;
+  vector<ll> a(n);
+  rep(i, n) cin >> a[i];
 
-  int xor_sum = 0;
-  rep(i, n) xor_sum = (xor_sum ^ (a[i] - 1));
-  rep(i, n) xor_sum = (xor_sum ^ (b[i] - 1));
+  vector<int> grundy = { 0, 0, 1, 1, 2 };
+  int sum = 0;
+  rep(i, n) {
+    int idx = a[i]%5;
+    sum = (sum ^ (grundy[idx]));
+  }
 
   string ans = "First";
-  if (xor_sum == 0) ans = "Second";
+  if (sum == 0) ans = "Second";
   cout << ans << endl;
+
   return 0;
 }
-

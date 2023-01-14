@@ -6,6 +6,7 @@ using namespace atcoder;
 using ll = long long;
 using P = pair<int, int>;
 void chmax(ll& a, ll b) { a = max(a, b); }
+void chmin(ll& a, ll b) { a = min(a, b); }
 
 ll dp[101][101][100];
 

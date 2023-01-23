@@ -12,9 +12,9 @@ int main() {
   int n; cin >> n;
   ll ans = 0;
   for (int i = 1; i <= n; ++i) {
-    if (i % 3 == 0 && i % 5 == 0) break;
-    else if (i % 3 == 0) break;
-    else if (i % 5 == 0) break;
+    if (i % 3 == 0 && i % 5 == 0) continue;
+    else if (i % 3 == 0) continue;
+    else if (i % 5 == 0) continue;
 
     ans += i;
   }

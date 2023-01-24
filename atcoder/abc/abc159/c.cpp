@@ -7,8 +7,12 @@ using ll = long long;
 using P = pair<int, int>;
 void chmax(ll& a, ll b) { a = max(a, b); }
 void chmin(ll& a, ll b) { a = min(a, b); }
-void cyn(bool x) { cout << (x ? "Yes" : "No") << endl; }
 
 int main() {
+  double l; cin >> l;
+  l /= 3;
+
+  double ans = l*l*l;
+  printf("%.7f", ans);
   return 0;
 }

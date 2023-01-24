@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+set -eu
+
+REPOSITORY_DIR="$(dirname "$0")/.."
+
+main () {
+  local opt="${1:-}"
+  shift || true
+
+  mkdir "$REPOSITORY_DIR/atcoder/abc/abc$opt"
+  for file_name in 'a' 'b' 'c' 'd'
+  do
+    cp "$REPOSITORY_DIR/template/atcoder/abc/a.cpp" "$REPOSITORY_DIR/atcoder/abc/abc$opt/$file_name.cpp"
+  done
+}
+
+main "$@"

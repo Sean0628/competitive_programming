@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+#include <atcoder/all>
+using namespace atcoder;
+#define rep(i, n) for (int i = 0; i < (n); ++i)
+#define out(arg) cout << (arg) << endl
+using ll = long long;
+using P = pair<int, int>;
+using mint = modint1000000007;
+void chmax(ll& a, ll b) { a = max(a, b); }
+void chmin(ll& a, ll b) { a = min(a, b); }
+void cyn(bool x) { cout << (x ? "Yes" : "No") << endl; }
+
+int main() {
+  int d; cin >> d;
+  string ans;
+  if (d == 25) ans = "Christmas";
+  if (d == 24) ans = "Christmas Eve";
+  if (d == 23) ans = "Christmas Eve Eve";
+  if (d == 22) ans = "Christmas Eve Eve Eve";
+
+  out(ans);
+  return 0;
+}

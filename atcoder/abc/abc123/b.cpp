@@ -21,8 +21,8 @@ int main() {
   rep(i, n) {
     int sum = 0;
     rep(j, n) {
-      if (i == j) sum += a[i];
-      else sum += b[i];
+      if (i == j) sum += a[j];
+      else sum += b[j];
     }
     ans = min(ans, sum);
   }

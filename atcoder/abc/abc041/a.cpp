@@ -12,5 +12,10 @@ void chmin(ll& a, ll b) { a = min(a, b); }
 void cyn(bool x) { cout << (x ? "Yes" : "No") << endl; }
 
 int main() {
+  string s; cin >> s;
+  int i; cin >> i;
+  i--;
+
+  out(s[i]);
   return 0;
 }

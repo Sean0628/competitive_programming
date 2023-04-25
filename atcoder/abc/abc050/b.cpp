@@ -20,6 +20,9 @@ int main() {
   int m; cin >> m;
   rep(i, m) {
     int p, x; cin >> p >> x;
+    p--;
+
+    out(tot - a[p] + x);
   }
   return 0;
 }

@@ -17,7 +17,7 @@ int main() {
   ll n, k; cin >> n >> k;
   vector<ll> a(n);
   vector<ll> sum(n+1);
-  ll cnt = 0;
+  ll cnt = 1;
   rep(i, n) cin >> a[i];
   sum[0] = 0;
   for (int i = 1; i <= n; ++i) {

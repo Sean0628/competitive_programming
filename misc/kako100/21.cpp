@@ -13,23 +13,28 @@ void chmin(ll& a, ll b) { a = min(a, b); }
 void chmin(int& a, int b) { a = min(a, b); }
 void cyn(bool x) { cout << (x ? "Yes" : "No") << endl; }
 
+const ll INF = 1e18;
+
 int main() {
   int n; cin >> n;
-  vector<int> a(n), b(n), c(n);
-  rep(i, n) cin >> a[i];
-  rep(i, n) cin >> b[i];
-  rep(i, n) cin >> c[i];
+  vector<ll> h(n), s(n);
+  rep(i, n) cin >> h[i] >> s[i];
 
-  sort(a.begin(), a.end());
-  sort(c.begin(), c.end());
+  ll l = 0, r = INF;
 
-  ll ans = 0;
-  rep(i, n) {
-    int aCnt = lower_bound(a.begin(), a.end(), b[i]) - a.begin();
-    int cCnt = n - (upper_bound(c.begin(), c.end(), b[i]) - c.begin());
-    ans += (ll) aCnt * cCnt;
+  while (l < r) {
+    ll mid = (l+r)/2;
+
+    vector<ll> lim(n);
+    rep(i, n) lim[i] = (mid-h[i]+s[i])/s[i]-1;
+    sort(lim.begin(), lim.end());
+    bool ok = true;
+    rep(i, n) if (lim[i] < i) ok = false;
+
+    if (ok) r = mid;
+    else l = mid+1;
   }
 
-  out(ans);
+  out(l);
   return 0;
 }

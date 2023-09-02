@@ -13,23 +13,22 @@ void chmin(ll& a, ll b) { a = min(a, b); }
 void chmin(int& a, int b) { a = min(a, b); }
 void cyn(bool x) { cout << (x ? "Yes" : "No") << endl; }
 
+const ll INF = 1e18;
+
 int main() {
-  int n; cin >> n;
-  vector<int> a(n), b(n), c(n);
-  rep(i, n) cin >> a[i];
-  rep(i, n) cin >> b[i];
-  rep(i, n) cin >> c[i];
+  double p; cin >> p;
 
-  sort(a.begin(), a.end());
-  sort(c.begin(), c.end());
+  double l = 0.0, r = 100.0;
+  double rm, lm;
 
-  ll ans = 0;
-  rep(i, n) {
-    int aCnt = lower_bound(a.begin(), a.end(), b[i]) - a.begin();
-    int cCnt = n - (upper_bound(c.begin(), c.end(), b[i]) - c.begin());
-    ans += (ll) aCnt * cCnt;
+  rep(i, 200) {
+    lm = (l*2 + r) / 3;
+    rm = (r*2 + l) / 3;
+
+    if (rm+p/pow(2, rm/1.5) > lm+p/pow(2, lm/1.5)) r = rm;
+    else l = lm;
   }
 
-  out(ans);
+  printf("%.9f\n", rm+p/pow(2, rm/1.5));
   return 0;
 }

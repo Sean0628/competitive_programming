@@ -13,6 +13,7 @@ using namespace atcoder;
 
 using ll = long long;
 using P = pair<int, int>;
+using PLL = pair<ll, ll>;
 using mint = modint1000000007;
 
 void chmax(ll& a, ll b) { a = max(a, b); }
@@ -22,6 +23,7 @@ void chmin(int& a, int b) { a = min(a, b); }
 void cyn(bool x) { cout << (x ? "Yes" : "No") << endl; }
 
 const int INF = 1e9;
+const ll LINF = 1e18;
 
 int main() {
   return 0;
